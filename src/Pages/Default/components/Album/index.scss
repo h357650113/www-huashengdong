@@ -41,3 +41,33 @@
         }
     }
 }
+
+@media screen and (max-width: 740px) {
+    .album {
+        width: 80%;
+        margin: 11px auto;
+
+        .content {
+            display: grid;
+            img {
+                margin-top: 13px;
+                float: right;
+                width: 215px;
+                height: 215px;
+                background-color: var(--website-color-gray-1);
+            }
+        }
+        .ctrl {
+            .date {
+                font-size: 13px;
+                font-weight: bold;
+            }
+            .more {
+                cursor: pointer;
+                color: var(--website-color-blue);
+                font-size: 13px;
+                font-weight: bold;
+            }
+        }
+    }
+}
