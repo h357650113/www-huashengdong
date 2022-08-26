@@ -24,6 +24,14 @@ export default function Footer() {
                     />
                 </div>
             </div>
+            <div className="copyright">
+                <div className="info">
+                    <p>copyright@2022 www.huashengdong.com</p>
+                    <p>Email: 357650113@qq.com</p>
+                    <p>ICP证: 冀ICP备17036318号</p>
+                    <p>河北网安备案：13030202002503号</p>
+                </div>
+            </div>
         </div>
     )
 }
