@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.scss'
 
 export default function Footer() {
@@ -8,17 +8,19 @@ export default function Footer() {
                 <h1>Dependence</h1>
                 <div className="wrap">
                     <Item
-                        src={
+                        src={'https://zh-hans.reactjs.org/'}
+                        imgSrc={
                             'https://hellogen.oss-cn-beijing.aliyuncs.com/www/react.png'
                         }
                     />
                     <Item
-                        src={
-                            'https://hellogen.oss-cn-beijing.aliyuncs.com/www/react.png'
+                        src={'https://reactrouter.com/en/main'}
+                        imgSrc={
+                            'https://hellogen.oss-cn-beijing.aliyuncs.com/www/screencapture-reactrouter-en-main-getting-started-installation-2022-08-26-17_50_37.png'
                         }
                     />
                     <Item
-                        src={
+                        imgSrc={
                             'https://hellogen.oss-cn-beijing.aliyuncs.com/www/react.png'
                         }
                     />
@@ -36,16 +38,41 @@ export default function Footer() {
     )
 }
 
-const Item = ({ src }) => {
+const Item = ({ src, imgSrc }) => {
+    const [mouseOver, setMouseOver] = useState(false)
+    const handleMouseEnter = () => {
+        setMouseOver(true)
+    }
+    const handleMouseLeave = () => {
+        setMouseOver(false)
+    }
+    const handleItemClick = () => {
+        window.open(src, '__back')
+    }
     return (
-        <div className="item">
+        <div
+            onClick={handleItemClick}
+            className="item"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+        >
             <div className="header">
                 <div className="dot" />
                 <div className="dot" />
                 <div className="dot" />
             </div>
             <div className="pic">
-                <img src={src} alt="" />
+                <img
+                    src={imgSrc}
+                    alt=""
+                    style={{
+                        position: 'relative',
+                        transition: 'ease 5s all',
+                        transform: !mouseOver
+                            ? 'translateY(0)'
+                            : 'translateY(-100%)',
+                    }}
+                />
             </div>
         </div>
     )
