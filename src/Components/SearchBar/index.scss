@@ -1,0 +1,23 @@
+.search-bar {
+    display: flex;
+    padding: 25px 30px;
+
+    .search {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        border-bottom: 1px solid var(--website-color-gray-1);
+
+        img {
+            width: 23px;
+            height: 23px;
+        }
+        input {
+            font-size: 20px;
+            margin: 0;
+            outline: none;
+            border: none;
+            padding: 5px 8px;
+        }
+    }
+}
