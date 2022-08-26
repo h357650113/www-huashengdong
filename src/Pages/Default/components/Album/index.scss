@@ -1,0 +1,43 @@
+.album {
+    position: relative;
+    background: #ffffff;
+    box-shadow: 0px 0px 4px #bdbdbd;
+    padding: 20px 29px;
+    width: 946px;
+    margin-bottom: 30px;
+
+    .content {
+        display: flex;
+        img {
+            width: 215px;
+            height: 215px;
+            background-color: var(--website-color-gray-1);
+        }
+    }
+    .ctrl {
+        margin-top: 35px;
+        display: flex;
+        justify-content: space-between;
+
+        .date {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .more {
+            cursor: pointer;
+            color: var(--website-color-blue);
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }
+    .tags {
+        display: flex;
+        margin-top: 35px;
+        .tag {
+            color: #ffffff;
+            background-color: var(--website-color-red);
+            padding: 3px 10px;
+            margin-right: 11px;
+        }
+    }
+}
