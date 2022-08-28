@@ -1,29 +1,32 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../Components/Header/Header'
 import SearchBar from '../../Components/SearchBar/SearchBar'
-import Album from './components/Album/Album'
 import Footer from '../../Components/Footer/Footer'
+import Album from './components/Album/Album'
 import './index.scss'
-import { getAlbums } from '../../api/album'
+import { getAlbumItems } from '../../api/album'
+import { useParams } from 'react-router-dom'
 
-export default function Default() {
-    const [albums, setAlbums] = useState([])
+export default function AlbumItems() {
+    const { id } = useParams()
+    const [albumItem, setAlbumItem] = useState({})
     async function fetchAlbums() {
-        const response = await getAlbums()
+        const response = await getAlbumItems({ id })
         if (response.data) {
-            setAlbums(response.data)
+            setAlbumItem(response.data)
         }
     }
     useEffect(() => {
         fetchAlbums()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
-
     return (
         <div className="page-default">
             <Header />
-            <SearchBar />
+            <SearchBar hasBack />
             <div className="albums-wrap">
-                {albums.length && albums.map((item) => <Album {...item} />)}
+                {albumItem.length &&
+                    albumItem.map((item) => <Album {...item} />)}
             </div>
             <Footer />
         </div>
