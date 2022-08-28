@@ -8,10 +8,15 @@
 
     .content {
         display: flex;
-        img {
+        justify-content: space-between;
+        .cover-image {
             width: 215px;
             height: 215px;
             background-color: var(--website-color-gray-1);
+            overflow: hidden;
+            background-repeat: none;
+            background-size: cover;
+            background-position: center;
         }
     }
     .ctrl {
