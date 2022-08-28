@@ -34,8 +34,7 @@ export default function Album({
             </div>
 
             <div className="tags">
-                <div className="tag">Tag</div>
-                <div className="tag">Tag</div>
+                <div className="tag">Blog</div>
             </div>
         </div>
     )
