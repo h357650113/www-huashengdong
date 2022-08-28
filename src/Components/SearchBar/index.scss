@@ -2,6 +2,20 @@
     display: flex;
     padding: 25px 30px;
 
+    .back {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        margin-right: 17px;
+
+        img {
+            width: 23px;
+            height: 23px;
+            margin-right: 7px;
+        }
+    }
+
     .search {
         display: flex;
         align-items: center;

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import searchSrc from '../../asset/icon/search.png'
+import returnSrc from '../../asset/icon/return.png'
 import './index.scss'
 
 export default function SearchBar({ hasBack = false }) {
@@ -12,7 +13,7 @@ export default function SearchBar({ hasBack = false }) {
         <div className="search-bar">
             {hasBack && (
                 <div className="back" onClick={handleBlackClick}>
-                    back
+                    <img src={returnSrc} alt="" /> back
                 </div>
             )}
             <div className="search">
