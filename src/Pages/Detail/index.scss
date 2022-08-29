@@ -14,7 +14,10 @@
             text-align: center;
         }
         img {
+            display: block;
             width: 100%;
+            max-width: 800px;
+            margin: 11px auto;
         }
     }
 }
