@@ -19,3 +19,14 @@ export const getAlbumItems = async ({ id }) => {
         return false
     }
 }
+export const getBlog = async ({ id }) => {
+    try {
+        const response = await api.get(
+            `https://proto.huashengdong.com/api/open/blog?blogId=${id}`
+        )
+        return response
+    } catch (error) {
+        console.log('error', error)
+        return false
+    }
+}

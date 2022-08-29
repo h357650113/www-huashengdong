@@ -1,22 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './index.scss'
 
 export default function Album({
     cdt,
     summary,
-    id,
     title,
     type,
-    tags,
+    open_source,
     onMoreClick = () => {},
 }) {
     const handleMoreClick = () => {
-        onMoreClick(id)
+        onMoreClick(open_source.match(/\d(\S+)|\d/g))
     }
 
     return (
-        <div className="album-item">
+        <div className="album-item" onClick={handleMoreClick}>
             <div className="type">{type}</div>
             <div className="content">
                 <div className="des">

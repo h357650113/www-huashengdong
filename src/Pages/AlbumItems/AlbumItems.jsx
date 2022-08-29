@@ -5,7 +5,7 @@ import Footer from '../../Components/Footer/Footer'
 import Album from './components/Album/Album'
 import './index.scss'
 import { getAlbumItems } from '../../api/album'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 export default function AlbumItems() {
     const { id } = useParams()
@@ -20,13 +20,19 @@ export default function AlbumItems() {
         fetchAlbums()
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+    const navigate = useNavigate()
+    const handleMoreClicK = (id) => {
+        navigate(`/detail/${id}`)
+    }
     return (
         <div className="page-default">
             <Header />
             <SearchBar hasBack />
             <div className="albums-wrap">
                 {albumItem.length &&
-                    albumItem.map((item) => <Album {...item} />)}
+                    albumItem.map((item) => (
+                        <Album {...item} onMoreClick={handleMoreClicK} />
+                    ))}
             </div>
             <Footer />
         </div>

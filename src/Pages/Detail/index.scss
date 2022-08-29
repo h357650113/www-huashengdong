@@ -1,0 +1,20 @@
+.page-blog {
+    .title {
+        padding: 15px;
+        text-align: center;
+        font-size: 21px;
+        font-weight: bold;
+    }
+    .summary {
+        padding: 15px;
+    }
+    .blog {
+        padding: 15px;
+        .ql-align-center {
+            text-align: center;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
