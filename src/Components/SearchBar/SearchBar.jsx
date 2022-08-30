@@ -8,6 +8,7 @@ export default function SearchBar({ hasBack = false, hasSearch = false }) {
     const navigate = useNavigate()
     const handleBlackClick = () => {
         if (window.history.length > 1) navigate(-1)
+        if (window.history.length === 1) window.location.href = '/'
     }
     return (
         <div className="search-bar">
