@@ -12,6 +12,7 @@ export default function AlbumItems() {
     async function fetchBlog(blogIid) {
         const res = await getBlog({ id: blogIid })
         setBlog(res.data)
+        document.title = res.data.title
     }
     useEffect(() => {
         fetchBlog(id)
