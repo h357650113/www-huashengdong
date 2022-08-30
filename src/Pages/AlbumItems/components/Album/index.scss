@@ -45,11 +45,12 @@
     }
 }
 
-@media screen and (min-width: 741px) {
+@media screen and (min-width: 740px) {
     .album-item {
         width: 946px;
         cursor: pointer;
         .content {
+            flex: content;
             display: flex;
             justify-content: space-between;
         }
