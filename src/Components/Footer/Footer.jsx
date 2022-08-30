@@ -56,7 +56,7 @@ const Item = ({ src, imgSrc }) => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <div className="header">
+            <div className="min-header">
                 <div className="dot" />
                 <div className="dot" />
                 <div className="dot" />
