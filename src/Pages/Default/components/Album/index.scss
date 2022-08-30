@@ -48,6 +48,26 @@
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .album {
+        width: 640px;
+        margin: 11px auto;
+
+        .ctrl {
+            .date {
+                font-size: 13px;
+                font-weight: bold;
+            }
+            .more {
+                cursor: pointer;
+                color: var(--website-color-blue);
+                font-size: 13px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 740px) {
     .album {
         width: 80%;

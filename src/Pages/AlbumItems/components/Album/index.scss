@@ -45,9 +45,9 @@
     }
 }
 
-@media screen and (min-width: 740px) {
+@media screen and (max-width: 1000px) {
     .album-item {
-        width: 946px;
+        width: 640px;
         cursor: pointer;
         .content {
             flex: content;
