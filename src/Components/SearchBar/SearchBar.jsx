@@ -11,7 +11,7 @@ export default function SearchBar({ hasBack = false, hasSearch = false }) {
     }
     return (
         <div className="search-bar">
-            {hasBack && (
+            {hasBack && window.history.length && (
                 <div className="back" onClick={handleBlackClick}>
                     <img src={returnSrc} alt="" /> back
                 </div>

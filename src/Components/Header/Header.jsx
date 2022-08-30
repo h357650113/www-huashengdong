@@ -7,9 +7,14 @@ export default function Header() {
     const handleGithubClick = () => {
         window.open('https://github.com/h357650113')
     }
+    const handleLogoClick = () => {
+        window.location.href = '/'
+    }
     return (
         <div className="header">
-            <div className="logo">huashengdong.com</div>
+            <div className="logo" onClick={handleLogoClick}>
+                huashengdong.com
+            </div>
             <div className="tips">
                 <div className="github" onClick={handleGithubClick}>
                     <img src={githubSrc} alt="h357650113 github" />
