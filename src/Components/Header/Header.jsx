@@ -7,7 +7,7 @@ export default function Header() {
         <div className="header">
             <div className="logo">huashengdong.com</div>
             <div className="email">
-                <img src={emailSrc} alt="email" />
+                <img src={emailSrc} alt="察纳雅言" />
                 <div className="text">Email</div>
             </div>
         </div>
