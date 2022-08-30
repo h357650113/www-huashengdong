@@ -7,7 +7,7 @@ import './index.scss'
 export default function SearchBar({ hasBack = false, hasSearch = false }) {
     const navigate = useNavigate()
     const handleBlackClick = () => {
-        navigate(-1)
+        if (window.history.length > 1) navigate(-1)
     }
     return (
         <div className="search-bar">
