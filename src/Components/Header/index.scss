@@ -7,23 +7,37 @@
     background-color: #fff;
     z-index: 9;
 
-    .email {
-        text-align: center;
-        color: #fff;
-        background-color: var(--website-color-blue);
-        padding: 5px;
-        border-radius: 0 5px 5px 0;
-        cursor: pointer;
-
-        .text {
-            font-size: 12px;
-        }
-    }
     .logo {
         padding: 5px 10px;
         font-size: 23px;
         font-weight: bold;
         display: grid;
         align-items: center;
+    }
+
+    .tips {
+        display: flex;
+        .github {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            margin-right: 11px;
+            img {
+                width: 37px;
+                height: 37px;
+            }
+        }
+        .email {
+            text-align: center;
+            color: #fff;
+            background-color: var(--website-color-blue);
+            padding: 5px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+
+            .text {
+                font-size: 12px;
+            }
+        }
     }
 }
