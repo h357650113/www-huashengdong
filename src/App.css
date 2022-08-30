@@ -4,3 +4,7 @@
     --website-color-gray-1: #e0e0e0;
     --website-color-gray-2: #313131;
 }
+
+a {
+    text-decoration: none;
+}

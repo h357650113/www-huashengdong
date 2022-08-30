@@ -21,7 +21,7 @@ export default function Default() {
     return (
         <div className="page-default">
             <Header />
-            <SearchBar />
+            <SearchBar hasSearch />
             <div className="albums-wrap">
                 {albums.length && albums.map((item) => <Album {...item} />)}
             </div>

@@ -4,7 +4,7 @@ import searchSrc from '../../asset/icon/search.png'
 import returnSrc from '../../asset/icon/return.png'
 import './index.scss'
 
-export default function SearchBar({ hasBack = false }) {
+export default function SearchBar({ hasBack = false, hasSearch = false }) {
     const navigate = useNavigate()
     const handleBlackClick = () => {
         navigate(-1)
@@ -16,10 +16,12 @@ export default function SearchBar({ hasBack = false }) {
                     <img src={returnSrc} alt="" /> back
                 </div>
             )}
-            <div className="search">
-                <img src={searchSrc} alt="" />
-                <input placeholder="SEARCH" />
-            </div>
+            {hasSearch && (
+                <div className="search">
+                    <img src={searchSrc} alt="" />
+                    <input placeholder="SEARCH" />
+                </div>
+            )}
         </div>
     )
 }

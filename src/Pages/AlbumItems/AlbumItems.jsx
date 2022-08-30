@@ -27,7 +27,7 @@ export default function AlbumItems() {
     return (
         <div className="page-default">
             <Header />
-            <SearchBar hasBack />
+            <SearchBar hasBack hasSearch />
             <div className="albums-wrap">
                 {albumItem.length &&
                     albumItem.map((item) => (
