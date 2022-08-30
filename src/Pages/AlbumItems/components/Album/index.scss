@@ -2,10 +2,8 @@
     position: relative;
     background: #ffffff;
     box-shadow: 0px 0px 4px #bdbdbd;
-    width: 946px;
     margin-bottom: 30px;
     display: flex;
-    cursor: pointer;
 
     .type {
         color: #ffffff;
@@ -18,10 +16,8 @@
     }
 
     .content {
-        flex: content;
         padding: 5px 13px;
-        display: flex;
-        justify-content: space-between;
+
         .des {
             .title {
                 font-weight: bold;
@@ -49,21 +45,31 @@
     }
 }
 
+@media screen and (min-width: 741px) {
+    .album-item {
+        width: 946px;
+        cursor: pointer;
+        .content {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
 @media screen and (max-width: 740px) {
     .album-item {
-        width: 100%;
         margin: 11px 0;
 
         .content {
-            display: grid;
             .cover-image {
                 margin-top: 7px;
             }
-        }
-        .ctrl {
-            .date {
-                font-size: 13px;
-                font-weight: bold;
+            .info {
+                margin-top: 7px;
+                .date {
+                    font-size: 13px;
+                    text-align: left;
+                }
             }
         }
     }
