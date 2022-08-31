@@ -1,8 +1,8 @@
 import api from '../util'
 
-export const getAlbums = async () => {
+export const getAlbums = async (search) => {
     try {
-        const response = await api.get(`/albums/2`)
+        const response = await api.get(`/albums/2`, { params: { search } })
         return response
     } catch (error) {
         console.log('error', error)

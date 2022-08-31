@@ -1,16 +1,26 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import searchSrc from '../../asset/icon/search.png'
 import returnSrc from '../../asset/icon/return.png'
 import homeSrc from '../../asset/icon/home.png'
 import './index.scss'
 
-export default function SearchBar({ hasBack = false, hasSearch = false }) {
+export default function SearchBar({
+    hasBack = false,
+    hasSearch = false,
+    onSearchEnterDown = () => {},
+}) {
     const navigate = useNavigate()
     const handleBlackClick = () => {
         if (window.history.length > 1) navigate(-1)
         if (window.history.length === 1) window.location.href = '/'
     }
+
+    const searchRef = useRef()
+    const handleSearchEnterDown = (e) => {
+        if (e.key === 'Enter') onSearchEnterDown(searchRef.current.value)
+    }
+
     return (
         <div className="search-bar">
             {hasBack && window.history.length && (
@@ -25,7 +35,11 @@ export default function SearchBar({ hasBack = false, hasSearch = false }) {
             {hasSearch && (
                 <div className="search">
                     <img src={searchSrc} alt="" />
-                    <input placeholder="SEARCH" />
+                    <input
+                        ref={searchRef}
+                        placeholder="SEARCH"
+                        onKeyDown={handleSearchEnterDown}
+                    />
                 </div>
             )}
         </div>

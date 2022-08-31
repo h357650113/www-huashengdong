@@ -8,8 +8,8 @@ import { getAlbums } from '../../api/album'
 
 export default function Default() {
     const [albums, setAlbums] = useState([])
-    async function fetchAlbums() {
-        const response = await getAlbums()
+    async function fetchAlbums(search) {
+        const response = await getAlbums(search)
         if (response.data) {
             setAlbums(response.data)
         }
@@ -17,13 +17,16 @@ export default function Default() {
     useEffect(() => {
         fetchAlbums()
     }, [])
-
+    const onSearchEnterDown = (value) => {
+        fetchAlbums(value)
+    }
     return (
         <div className="page-default">
             <Header />
-            <SearchBar hasSearch />
+            <SearchBar hasSearch onSearchEnterDown={onSearchEnterDown} />
             <div className="albums-wrap">
-                {albums.length && albums.map((item) => <Album {...item} />)}
+                {albums.length &&
+                    albums.map((item) => <Album key={item.id} {...item} />)}
             </div>
             <Footer />
         </div>
