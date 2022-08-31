@@ -9,11 +9,14 @@ import { useParams, useNavigate } from 'react-router-dom'
 
 export default function AlbumItems() {
     const { id } = useParams()
-    const [albumItem, setAlbumItem] = useState([])
+    const [albumItem, setAlbumItem] = useState({ store: [], current: [] })
     async function fetchAlbums() {
         const response = await getAlbumItems({ id })
         if (response.data) {
-            setAlbumItem(response.data)
+            setAlbumItem({
+                store: response.data,
+                current: response.data,
+            })
         }
     }
     useEffect(() => {
@@ -26,12 +29,15 @@ export default function AlbumItems() {
     }
     const handleSearchEnterDown = (value) => {
         value &&
-            setAlbumItem((pre) =>
-                pre.filter(
-                    (item) =>
-                        item.title.match(value) || item.summary.match(value)
-                )
-            )
+            setAlbumItem((pre) => {
+                return {
+                    ...pre,
+                    current: pre.store.filter(
+                        (item) =>
+                            item.title.match(value) || item.summary.match(value)
+                    ),
+                }
+            })
 
         !value && fetchAlbums()
     }
@@ -44,8 +50,8 @@ export default function AlbumItems() {
                 onSearchEnterDown={handleSearchEnterDown}
             />
             <div className="albums-wrap">
-                {albumItem.length
-                    ? albumItem.map((item) => (
+                {albumItem.current.length
+                    ? albumItem.current.map((item) => (
                           <Album
                               key={item.id}
                               {...item}
