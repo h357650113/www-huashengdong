@@ -46,7 +46,11 @@ export default function AlbumItems() {
             <div className="albums-wrap">
                 {albumItem.length
                     ? albumItem.map((item) => (
-                          <Album {...item} onMoreClick={handleMoreClicK} />
+                          <Album
+                              key={item.id}
+                              {...item}
+                              onMoreClick={handleMoreClicK}
+                          />
                       ))
                     : 'Not Found'}
             </div>
