@@ -25,8 +25,9 @@ export default function Default() {
             <Header />
             <SearchBar hasSearch onSearchEnterDown={onSearchEnterDown} />
             <div className="albums-wrap">
-                {albums.length &&
-                    albums.map((item) => <Album key={item.id} {...item} />)}
+                {albums.length
+                    ? albums.map((item) => <Album key={item.id} {...item} />)
+                    : 'Not Found'}
             </div>
             <Footer />
         </div>
