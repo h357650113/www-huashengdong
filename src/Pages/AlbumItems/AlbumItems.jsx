@@ -9,7 +9,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 
 export default function AlbumItems() {
     const { id } = useParams()
-    const [albumItem, setAlbumItem] = useState({})
+    const [albumItem, setAlbumItem] = useState([])
     async function fetchAlbums() {
         const response = await getAlbumItems({ id })
         if (response.data) {
@@ -24,15 +24,31 @@ export default function AlbumItems() {
     const handleMoreClicK = (id) => {
         navigate(`/detail/${id}`)
     }
+    const handleSearchEnterDown = (value) => {
+        value &&
+            setAlbumItem((pre) =>
+                pre.filter(
+                    (item) =>
+                        item.title.match(value) || item.summary.match(value)
+                )
+            )
+
+        !value && fetchAlbums()
+    }
     return (
         <div className="page-default">
             <Header />
-            <SearchBar hasBack hasSearch />
+            <SearchBar
+                hasBack
+                hasSearch
+                onSearchEnterDown={handleSearchEnterDown}
+            />
             <div className="albums-wrap">
-                {albumItem.length &&
-                    albumItem.map((item) => (
-                        <Album {...item} onMoreClick={handleMoreClicK} />
-                    ))}
+                {albumItem.length
+                    ? albumItem.map((item) => (
+                          <Album {...item} onMoreClick={handleMoreClicK} />
+                      ))
+                    : 'Not Found'}
             </div>
             <Footer />
         </div>
