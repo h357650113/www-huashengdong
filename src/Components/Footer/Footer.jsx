@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './index.scss'
 
 export default function Footer() {
@@ -10,13 +10,13 @@ export default function Footer() {
                     <Item
                         src={'https://zh-hans.reactjs.org/'}
                         imgSrc={
-                            'https://hellogen.oss-cn-beijing.aliyuncs.com/www/react.png'
+                            'https://hellogen.oss-cn-beijing.aliyuncs.com/blog/images/screencapture-zh-hans-reactjs-org-2022-09-01-17_14_33.jpg'
                         }
                     />
                     <Item
                         src={'https://reactrouter.com/en/main'}
                         imgSrc={
-                            'https://hellogen.oss-cn-beijing.aliyuncs.com/www/screencapture-reactrouter-en-main-getting-started-installation-2022-08-26-17_50_37.png'
+                            'https://hellogen.oss-cn-beijing.aliyuncs.com/www/screencapture-reactrouter-en-v6-3-0-guides-ssr-2022-09-01-17_19_25.jpg'
                         }
                     />
                     <Item
