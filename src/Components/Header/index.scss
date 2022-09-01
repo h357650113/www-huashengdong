@@ -55,3 +55,33 @@
         }
     }
 }
+
+@media screen and (max-width: 740px) {
+    .header {
+        .logo {
+            cursor: pointer;
+            padding: 5px 10px;
+            font-size: 23px;
+            font-weight: bold;
+            display: grid;
+            align-items: center;
+        }
+        .tips {
+            .chart {
+                margin-right: 7px;
+                img {
+                    margin-top: 3px;
+                    width: 37px;
+                    height: 37px;
+                }
+            }
+            .github {
+                margin-right: 11px;
+                img {
+                    width: 27px;
+                    height: 27px;
+                }
+            }
+        }
+    }
+}
