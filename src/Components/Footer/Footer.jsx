@@ -20,6 +20,7 @@ export default function Footer() {
                         }
                     />
                     <Item
+                        src={'https://recharts.org/en-US'}
                         imgSrc={
                             'https://hellogen.oss-cn-beijing.aliyuncs.com/blog/images/screencapture-recharts-org-en-US-2022-09-01-16_19_58.png'
                         }
