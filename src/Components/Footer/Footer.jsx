@@ -21,7 +21,7 @@ export default function Footer() {
                     />
                     <Item
                         imgSrc={
-                            'https://hellogen.oss-cn-beijing.aliyuncs.com/www/react.png'
+                            'https://hellogen.oss-cn-beijing.aliyuncs.com/blog/images/screencapture-recharts-org-en-US-2022-09-01-16_19_58.png'
                         }
                     />
                 </div>

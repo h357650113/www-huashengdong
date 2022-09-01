@@ -3,6 +3,7 @@ import './App.css'
 import PageDefault from './Pages/Default/Default'
 import PageAlbumItems from './Pages/AlbumItems/AlbumItems'
 import PageDetail from './Pages/Detail/Detail'
+import PageChart from './Pages/Chart/Chart'
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/detail">
                     <Route path=":id" element={<PageDetail />} />
                 </Route>
+                <Route path="/chart" element={<PageChart />} />
             </Routes>
         </BrowserRouter>
     )

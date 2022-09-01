@@ -1,14 +1,20 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import './index.scss'
 import emailSrc from '../../asset/icon/email.png'
 import githubSrc from '../../asset/icon/github.png'
+import chartSrc from '../../asset/icon/chart.png'
 
 export default function Header() {
+    const navigate = useNavigate()
     const handleGithubClick = () => {
         window.open('https://github.com/h357650113')
     }
     const handleLogoClick = () => {
         window.location.href = '/'
+    }
+    const handleChartClick = () => {
+        navigate('/chart')
     }
     return (
         <div className="header">
@@ -16,6 +22,9 @@ export default function Header() {
                 huashengdong.com
             </div>
             <div className="tips">
+                <div className="chart" onClick={handleChartClick}>
+                    <img src={chartSrc} alt="chart" />
+                </div>
                 <div className="github" onClick={handleGithubClick}>
                     <img src={githubSrc} alt="h357650113 github" />
                 </div>

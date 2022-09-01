@@ -6,7 +6,7 @@ import './index.scss'
 import { useParams } from 'react-router-dom'
 import { getBlog } from '../../api/album'
 
-export default function AlbumItems() {
+export default function Detail() {
     const { id } = useParams()
     const [blog, setBlog] = useState('')
     async function fetchBlog(blogIid) {

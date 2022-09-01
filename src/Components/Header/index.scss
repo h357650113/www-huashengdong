@@ -18,8 +18,21 @@
 
     .tips {
         display: flex;
+        .chart {
+            cursor: pointer;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            margin-right: 11px;
+            img {
+                margin-top: 3px;
+                width: 47px;
+                height: 47px;
+            }
+        }
         .github {
             display: grid;
+            cursor: pointer;
             justify-content: center;
             align-items: center;
             margin-right: 11px;
