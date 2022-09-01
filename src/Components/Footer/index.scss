@@ -44,6 +44,8 @@
                 }
 
                 & > .min-header {
+                    position: sticky;
+                    z-index: 9;
                     display: flex;
                     justify-content: left;
                     background-color: #949494;
@@ -65,11 +67,27 @@
     }
 }
 
-@media screen and (min-width: 741px) {
+@media screen and (min-width: 1001px) {
     .footer {
         .dependence {
             h1 {
                 margin-top: 62px;
+            }
+            .wrap {
+                .item {
+                    .pic {
+                        img {
+                            transition: transform 5s ease;
+                            transform: translateY(0);
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            img {
+                                transform: translateY(-100%);
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -95,6 +113,7 @@
                 .item {
                     overflow: hidden;
                     width: 80%;
+                    height: 230px;
                     margin: 11px auto;
                 }
             }

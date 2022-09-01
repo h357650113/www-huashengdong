@@ -40,40 +40,18 @@ export default function Footer() {
 }
 
 const Item = ({ src, imgSrc }) => {
-    const [mouseOver, setMouseOver] = useState(false)
-    const handleMouseEnter = () => {
-        setMouseOver(true)
-    }
-    const handleMouseLeave = () => {
-        setMouseOver(false)
-    }
     const handleItemClick = () => {
         window.open(src, '__back')
     }
     return (
-        <div
-            onClick={handleItemClick}
-            className="item"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-        >
+        <div onClick={handleItemClick} className="item">
             <div className="min-header">
                 <div className="dot" />
                 <div className="dot" />
                 <div className="dot" />
             </div>
             <div className="pic">
-                <img
-                    src={imgSrc}
-                    alt=""
-                    style={{
-                        position: 'relative',
-                        transition: 'ease 5s all',
-                        transform: !mouseOver
-                            ? 'translateY(0)'
-                            : 'translateY(-100%)',
-                    }}
-                />
+                <img src={imgSrc} alt="" />
             </div>
         </div>
     )
