@@ -30,6 +30,11 @@
             margin-top: 0;
             overflow: auto;
         }
+        blockquote {
+            border-left: 7px solid rgb(209, 209, 209);
+            color: var(--website-color-gray-3);
+            padding-left: 11px;
+        }
         .ql-syntax {
             font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
                 'Liberation Mono', 'Courier New', monospace;
