@@ -9,3 +9,13 @@ export const getViewsByDate = async () => {
         return false
     }
 }
+
+export const getViewsBlog = async () => {
+    try {
+        const response = await api.get(`/chart/view/blog`)
+        return response
+    } catch (error) {
+        console.log('error', error)
+        return false
+    }
+}
