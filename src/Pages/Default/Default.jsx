@@ -15,6 +15,7 @@ export default function Default() {
         }
     }
     useEffect(() => {
+        document.title = 'HOME'
         fetchAlbums()
     }, [])
     const onSearchEnterDown = (value) => {

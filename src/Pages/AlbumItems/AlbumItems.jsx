@@ -10,7 +10,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 export default function AlbumItems() {
     const { id } = useParams()
     const [albumItem, setAlbumItem] = useState({ store: [], current: [] })
-    async function fetchAlbums() {
+    async function fetchAlbums(id) {
         const response = await getAlbumItems({ id })
         if (response.data) {
             setAlbumItem({
@@ -18,11 +18,11 @@ export default function AlbumItems() {
                 current: response.data,
             })
         }
+        document.title = 'ALBUM'
     }
     useEffect(() => {
-        fetchAlbums()
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+        fetchAlbums(id)
+    }, [id])
     const navigate = useNavigate()
     const handleMoreClicK = (id) => {
         navigate(`/detail/${id}`)
