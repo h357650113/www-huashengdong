@@ -22,12 +22,16 @@ export default function Default() {
     const onSearchEnterDown = (value) => {
         fetchAlbums(value)
     }
+    const handleCategoriesChange = (tags) => {}
     return (
         <div className="page-default">
             <Header />
             <SearchBar hasSearch onSearchEnterDown={onSearchEnterDown} />
             <div className="content">
-                <Categories />
+                <Categories
+                    onChange={handleCategoriesChange}
+                    defaultCurrentTags={[{ name: 'blog', id: 1 }]}
+                />
                 <div className="albums-wrap">
                     {albums.length
                         ? albums.map((item) => (

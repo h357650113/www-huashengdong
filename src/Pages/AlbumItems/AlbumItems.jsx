@@ -42,7 +42,7 @@ export default function AlbumItems() {
         !value && fetchAlbums()
     }
     return (
-        <div className="page-default">
+        <div className="page-album-items">
             <Header />
             <SearchBar
                 hasBack

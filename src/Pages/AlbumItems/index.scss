@@ -1,3 +1,7 @@
-.albums-wrap {
-    padding: 15px;
+.page-album-items {
+    .albums-wrap {
+        padding: 15px;
+        display: grid;
+        justify-content: center;
+    }
 }
