@@ -18,11 +18,13 @@
             font-size: 15px;
             border: solid 1px var(--website-color-red);
             color: var(--website-color-red);
-            box-shadow: 0px 0px 2px var(--website-color-red);
         }
         .action {
             background-color: var(--website-color-red);
             color: #fff;
+        }
+        .action:hover {
+            box-shadow: 0px 0px 2px var(--website-color-red);
         }
     }
 }

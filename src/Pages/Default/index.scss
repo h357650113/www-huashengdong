@@ -2,16 +2,23 @@
     position: relative;
 
     .content {
-        display: flex;
-        justify-content: space-between;
-        .categories,
-        .tips {
-            display: block;
-            flex: 1;
-        }
         .albums-wrap {
             display: grid;
             justify-content: center;
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .page-default {
+        .content {
+            display: flex;
+            justify-content: space-between;
+            .categories,
+            .tips {
+                display: block;
+                flex: 1;
+            }
         }
     }
 }
