@@ -3,6 +3,7 @@ import Header from '../../Components/Header/Header'
 import SearchBar from '../../Components/SearchBar/SearchBar'
 import Album from './components/Album/Album'
 import Footer from '../../Components/Footer/Footer'
+import Categories from '../../Components/Categories/Categories'
 import './index.scss'
 import { getAlbums } from '../../api/album'
 
@@ -25,10 +26,16 @@ export default function Default() {
         <div className="page-default">
             <Header />
             <SearchBar hasSearch onSearchEnterDown={onSearchEnterDown} />
-            <div className="albums-wrap">
-                {albums.length
-                    ? albums.map((item) => <Album key={item.id} {...item} />)
-                    : 'Not Found'}
+            <div className="content">
+                <Categories />
+                <div className="albums-wrap">
+                    {albums.length
+                        ? albums.map((item) => (
+                              <Album key={item.id} {...item} />
+                          ))
+                        : 'Not Found'}
+                </div>
+                <div className="tips" />
             </div>
             <Footer />
         </div>

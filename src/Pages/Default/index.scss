@@ -1,8 +1,17 @@
 .page-default {
     position: relative;
 
-    .albums-wrap {
-        display: grid;
-        justify-content: center;
+    .content {
+        display: flex;
+        justify-content: space-between;
+        .categories,
+        .tips {
+            display: block;
+            flex: 1;
+        }
+        .albums-wrap {
+            display: grid;
+            justify-content: center;
+        }
     }
 }

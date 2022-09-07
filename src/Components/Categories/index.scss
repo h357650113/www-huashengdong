@@ -1,0 +1,28 @@
+.categories {
+    padding: 15px;
+
+    h1 {
+        margin: 0;
+        font-size: 31px;
+        font-weight: bold;
+    }
+    .tags-wrap {
+        display: flex;
+        margin-top: 17px;
+        flex-wrap: wrap;
+
+        .tag {
+            cursor: pointer;
+            margin: 0 11px 11px 0;
+            padding: 2px 7px;
+            font-size: 15px;
+            border: solid 1px var(--website-color-red);
+            color: var(--website-color-red);
+            box-shadow: 0px 0px 2px var(--website-color-red);
+        }
+        .action {
+            background-color: var(--website-color-red);
+            color: #fff;
+        }
+    }
+}
