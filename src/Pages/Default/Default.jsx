@@ -9,8 +9,12 @@ import { getAlbums } from '../../api/album'
 
 export default function Default() {
     const [albums, setAlbums] = useState([])
+    const [tags, setTags] = useState([])
     async function fetchAlbums(search) {
-        const response = await getAlbums(search)
+        const response = await getAlbums({
+            search,
+            tags: tags.map((item) => item.id),
+        })
         if (response.data) {
             setAlbums(response.data)
         }
@@ -22,16 +26,15 @@ export default function Default() {
     const onSearchEnterDown = (value) => {
         fetchAlbums(value)
     }
-    const handleCategoriesChange = (tags) => {}
+    const handleCategoriesChange = (_tags) => {
+        setTags(_tags)
+    }
     return (
         <div className="page-default">
             <Header />
             <SearchBar hasSearch onSearchEnterDown={onSearchEnterDown} />
             <div className="content">
-                <Categories
-                    onChange={handleCategoriesChange}
-                    defaultCurrentTags={[]}
-                />
+                <Categories onChange={handleCategoriesChange} />
                 <div className="albums-wrap">
                     {albums.length
                         ? albums.map((item) => (

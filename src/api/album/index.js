@@ -12,9 +12,11 @@ export const getAlbumTags = async () => {
     }
 }
 
-export const getAlbums = async (search) => {
+export const getAlbums = async ({ search, tags }) => {
     try {
-        const response = await api.get(`/albums/2`, { params: { search } })
+        const response = await api.get(`/albums/2`, {
+            params: { search, tags },
+        })
         return response
     } catch (error) {
         console.log('error', error)

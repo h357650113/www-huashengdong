@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { getAlbumTags } from '../../api/album/index'
 import './index.scss'
 
-export default function Categories({
-    onChange = () => {},
-    defaultCurrentTags = [],
-}) {
+export default function Categories({ onChange = () => {} }) {
     const [tags, setTags] = useState([])
-    const [currentTags, setCurrentTags] = useState(defaultCurrentTags)
+    const [currentTags, setCurrentTags] = useState([])
     const handleTagClick = (target) => {
         setCurrentTags((pre) => {
             if (pre.find((item) => item.id === target.id)) {
@@ -20,6 +17,7 @@ export default function Categories({
         const responseTags = await getAlbumTags()
         if (responseTags.data) {
             setTags(responseTags.data)
+            setCurrentTags(responseTags.data)
         }
     }
     useEffect(() => {

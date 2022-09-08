@@ -8,6 +8,7 @@ export default function Album({
     summary,
     id,
     title,
+    tags,
     onMoreClick = () => {},
 }) {
     const handleMoreClick = () => {
@@ -34,7 +35,12 @@ export default function Album({
             </div>
 
             <div className="tags">
-                <div className="tag">Blog</div>
+                {tags &&
+                    tags.map((item) => (
+                        <div key={item.id} className="tag">
+                            {item.name}
+                        </div>
+                    ))}
             </div>
         </div>
     )
