@@ -30,7 +30,7 @@ export default function Default() {
             <div className="content">
                 <Categories
                     onChange={handleCategoriesChange}
-                    defaultCurrentTags={[{ name: 'blog', id: 1 }]}
+                    defaultCurrentTags={[]}
                 />
                 <div className="albums-wrap">
                     {albums.length

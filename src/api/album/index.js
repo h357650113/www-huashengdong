@@ -1,5 +1,17 @@
 import api from '../util'
 
+export const getAlbumTags = async () => {
+    try {
+        const response = await api.get(`/tags`, {
+            params: { id: 2, sourceType: 'album' },
+        })
+        return response
+    } catch (error) {
+        console.log('error', error)
+        return false
+    }
+}
+
 export const getAlbums = async (search) => {
     try {
         const response = await api.get(`/albums/2`, { params: { search } })
