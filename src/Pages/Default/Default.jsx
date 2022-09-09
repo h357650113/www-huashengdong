@@ -15,7 +15,7 @@ export default function Default() {
             search,
             tags: tags.map((item) => item.id),
         })
-        if (response.data) {
+        if (response?.data) {
             setAlbums(response.data)
         }
     }
