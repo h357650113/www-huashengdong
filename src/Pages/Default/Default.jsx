@@ -8,8 +8,8 @@ import './index.scss'
 import { getAlbums } from '../../api/album'
 
 export default function Default() {
-    const [albums, setAlbums] = useState([])
-    const [tags, setTags] = useState([])
+    const [albums, setAlbums] = useState(null)
+    const [tags, setTags] = useState(null)
     async function fetchAlbums(search) {
         const response = await getAlbums({
             search,
@@ -21,8 +21,8 @@ export default function Default() {
     }
     useEffect(() => {
         document.title = 'HOME'
-        fetchAlbums()
-    }, [])
+        tags && fetchAlbums()
+    }, [tags])
     const onSearchEnterDown = (value) => {
         fetchAlbums(value)
     }
@@ -36,7 +36,7 @@ export default function Default() {
             <div className="content">
                 <Categories onChange={handleCategoriesChange} />
                 <div className="albums-wrap">
-                    {albums.length
+                    {albums?.length
                         ? albums.map((item) => (
                               <Album key={item.id} {...item} />
                           ))

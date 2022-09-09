@@ -3,7 +3,7 @@ import { getAlbumTags } from '../../api/album/index'
 import './index.scss'
 
 export default function Categories({ onChange = () => {} }) {
-    const [tags, setTags] = useState([])
+    const [tags, setTags] = useState(null)
     const [currentTags, setCurrentTags] = useState([])
     const handleTagClick = (target) => {
         setCurrentTags((pre) => {
@@ -30,24 +30,28 @@ export default function Categories({ onChange = () => {} }) {
         <div className="categories">
             <h1>Categories</h1>
             <div className="tags-wrap">
-                {tags.length &&
-                    tags.map((item) => (
-                        <div
-                            className={
-                                currentTags.find(
-                                    (target) => target.id === item.id
-                                )
-                                    ? 'tag action'
-                                    : 'tag'
-                            }
-                            key={item.id}
-                            onClick={() => {
-                                handleTagClick({ id: item.id, name: item.name })
-                            }}
-                        >
-                            {item.name}
-                        </div>
-                    ))}
+                {tags?.length
+                    ? tags.map((item) => (
+                          <div
+                              className={
+                                  currentTags.find(
+                                      (target) => target.id === item.id
+                                  )
+                                      ? 'tag action'
+                                      : 'tag'
+                              }
+                              key={item.id}
+                              onClick={() => {
+                                  handleTagClick({
+                                      id: item.id,
+                                      name: item.name,
+                                  })
+                              }}
+                          >
+                              {item.name}
+                          </div>
+                      ))
+                    : 'Loading...'}
             </div>
         </div>
     )
