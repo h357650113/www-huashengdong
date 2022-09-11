@@ -17,6 +17,7 @@ export default function AlbumItems() {
                 store: response.data,
                 current: response.data,
             })
+            window.scrollTo(0, 0)
         }
         document.title = 'ALBUM'
     }

@@ -60,19 +60,14 @@
 @media screen and (max-width: 740px) {
     .album-item {
         margin: 11px 0;
-        width: 321px;
-
+        width: calc(100vw - 40px);
         .content {
             .cover-image {
                 margin-top: 7px;
             }
-            .info {
-                margin-top: 7px;
-                .date {
-                    font-size: 13px;
-                    text-align: left;
-                }
-            }
+        }
+        .info {
+            display: none;
         }
     }
 }

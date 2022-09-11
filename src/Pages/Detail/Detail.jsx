@@ -9,10 +9,12 @@ import { getBlog } from '../../api/album'
 export default function Detail() {
     const { id } = useParams()
     const [blog, setBlog] = useState('')
+
     async function fetchBlog(blogIid) {
         const res = await getBlog({ id: blogIid })
         setBlog(res.data)
         document.title = res.data.title
+        window.scrollTo(0, 0)
     }
     useEffect(() => {
         fetchBlog(id)

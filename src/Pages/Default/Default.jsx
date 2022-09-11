@@ -17,6 +17,7 @@ export default function Default() {
         })
         if (response?.data) {
             setAlbums(response.data)
+            window.scrollTo(0, 0)
         }
     }
     useEffect(() => {
