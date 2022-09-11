@@ -46,7 +46,7 @@
 
 @media screen and (min-width: 1001px) {
     .album {
-        width: 947px;
+        width: 837px;
         .content {
             display: flex;
             justify-content: space-between;
@@ -61,7 +61,6 @@
     .album {
         width: 640px;
         margin: 11px auto;
-
         .content {
             display: grid;
             justify-content: center;
@@ -72,7 +71,6 @@
                 margin-top: 7px;
             }
         }
-
         .ctrl {
             .date {
                 font-size: 13px;

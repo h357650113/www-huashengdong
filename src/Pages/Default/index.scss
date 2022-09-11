@@ -9,13 +9,13 @@
     }
 }
 
-@media screen and (min-width: 1001px) {
+@media screen and (min-width: 1025px) {
     .page-default {
         .content {
             display: flex;
             justify-content: space-between;
             .albums-wrap {
-                min-width: 1000px;
+                min-width: 917px;
             }
             .categories,
             .tips {
