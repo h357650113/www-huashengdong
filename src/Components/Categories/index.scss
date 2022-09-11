@@ -1,11 +1,27 @@
 .categories {
     padding: 15px;
 
-    h1 {
-        margin: 0;
-        font-size: 31px;
-        font-weight: bold;
+    .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h1 {
+            margin: 0;
+            font-size: 31px;
+            font-weight: bold;
+        }
+        span {
+            cursor: pointer;
+            font-size: 21px;
+            color: rgb(147, 147, 147);
+        }
+        .action {
+            font-weight: bold;
+            font-size: 27px;
+            color: var(--website-color-red);
+        }
     }
+
     .tags-wrap {
         display: flex;
         margin-top: 17px;

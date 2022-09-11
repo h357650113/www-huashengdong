@@ -3,6 +3,7 @@ import { getAlbumTags } from '../../api/album/index'
 import './index.scss'
 
 export default function Categories({ onChange = () => {} }) {
+    const [checkedAllTags, setCheckedAllTags] = useState(true)
     const [tags, setTags] = useState(null)
     const [currentTags, setCurrentTags] = useState([])
     const handleTagClick = (target) => {
@@ -26,9 +27,37 @@ export default function Categories({ onChange = () => {} }) {
     useEffect(() => {
         onChange(currentTags)
     }, [currentTags, onChange])
+
+    const handleAllClick = () => {
+        setCheckedAllTags((pre) => {
+            if (!pre) {
+                setCurrentTags(tags)
+            } else {
+                setCurrentTags([])
+            }
+            return !pre
+        })
+    }
+    useEffect(() => {
+        if (tags?.length !== currentTags?.length) {
+            setCheckedAllTags(false)
+        } else {
+            setCheckedAllTags(true)
+        }
+    }, [tags, currentTags])
     return (
         <div className="categories">
-            <h1>Categories</h1>
+            <div className="top">
+                <h1>Categories</h1>
+                <div className="tools">
+                    <span
+                        className={checkedAllTags && 'action'}
+                        onClick={handleAllClick}
+                    >
+                        ALL
+                    </span>
+                </div>
+            </div>
             <div className="tags-wrap">
                 {tags?.length
                     ? tags.map((item) => (
