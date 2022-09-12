@@ -1,5 +1,4 @@
 {
-    "marquee.widgets.npm-stats.packageNames": [
-        "www"
-    ]
+    "marquee.widgets.npm-stats.packageNames": ["www"],
+    "cSpell.words": ["Treemap"]
 }

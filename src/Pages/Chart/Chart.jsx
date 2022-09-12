@@ -5,6 +5,7 @@ import Footer from '../../Components/Footer/Footer'
 import './index.scss'
 import DateViewsChart from './components/DateViewsChart/DateViewsChart'
 import BlogViewsChart from './components/BlogViewsChart/BlogViewsChart'
+import AreaCountChart from './components/AreaCountChart/AreaCountChart'
 
 export default function Chart() {
     return (
@@ -16,6 +17,8 @@ export default function Chart() {
                 <DateViewsChart />
                 <h3>Blog问量：</h3>
                 <BlogViewsChart />
+                <h3>区域统计：</h3>
+                <AreaCountChart />
             </div>
             <Footer />
         </div>
