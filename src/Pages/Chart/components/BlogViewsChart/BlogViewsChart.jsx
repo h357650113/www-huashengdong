@@ -24,7 +24,16 @@ export default function BlogViewsChart() {
     return (
         <div className="chart">
             <ResponsiveContainer width="100%" height="100%">
-                <BarChart width={'100%'} height={'100%'} data={viewsBlog}>
+                <BarChart
+                    margin={{
+                        top: 15,
+                        right: 30,
+                        left: 0,
+                    }}
+                    width={'100%'}
+                    height={'100%'}
+                    data={viewsBlog}
+                >
                     <Bar dataKey="value" fill="#8884d8" />
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey="title" />
