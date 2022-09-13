@@ -1,3 +1,6 @@
-img, p, body {
-  margin: 0;
+img,
+p,
+body {
+    font-family: PingFang HK, Arial, Helvetica, sans-serif;
+    margin: 0;
 }
