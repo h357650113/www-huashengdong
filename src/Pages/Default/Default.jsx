@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Header from '../../Components/Header/Header'
 import SearchBar from '../../Components/SearchBar/SearchBar'
 import Album from './components/Album/Album'
@@ -8,6 +8,7 @@ import './index.scss'
 import { getAlbums } from '../../api/album'
 
 export default function Default() {
+    const ref = useRef()
     const [albums, setAlbums] = useState(null)
     const [tags, setTags] = useState(null)
     async function fetchAlbums(search) {
@@ -17,7 +18,7 @@ export default function Default() {
         })
         if (response?.data) {
             setAlbums(response.data)
-            window.scrollTo(0, 0)
+            ref?.current?.scrollIntoView({ behavior: 'smooth' })
         }
     }
     useEffect(() => {
@@ -31,7 +32,7 @@ export default function Default() {
         setTags(_tags)
     }
     return (
-        <div className="page-default">
+        <div className="page-default" ref={ref}>
             <Header />
             <SearchBar hasSearch onSearchEnterDown={onSearchEnterDown} />
             <div className="content">

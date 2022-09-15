@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Header from '../../Components/Header/Header'
 import SearchBar from '../../Components/SearchBar/SearchBar'
 import Footer from '../../Components/Footer/Footer'
@@ -8,6 +8,7 @@ import { getAlbumItems } from '../../api/album'
 import { useParams, useNavigate } from 'react-router-dom'
 
 export default function AlbumItems() {
+    const ref = useRef()
     const { id } = useParams()
     const [albumItem, setAlbumItem] = useState({ store: [], current: [] })
     async function fetchAlbums(id) {
@@ -17,7 +18,7 @@ export default function AlbumItems() {
                 store: response.data,
                 current: response.data,
             })
-            window.scrollTo(0, 0)
+            ref?.current?.scrollIntoView({ behavior: 'smooth' })
         }
         document.title = 'ALBUM'
     }
@@ -43,7 +44,7 @@ export default function AlbumItems() {
         !value && fetchAlbums()
     }
     return (
-        <div className="page-album-items">
+        <div className="page-album-items" ref={ref}>
             <Header />
             <SearchBar
                 hasBack
