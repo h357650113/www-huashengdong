@@ -6,8 +6,6 @@
     margin-bottom: 27px;
     border-radius: 5px;
 
-    animation: showItem 0.3s ease forwards;
-
     .content {
         .cover-image {
             height: 211px;
@@ -116,11 +114,5 @@
                 font-weight: bold;
             }
         }
-    }
-}
-
-@supports (animation: 'showItem 0.3s ease forwards') {
-    .album {
-        opacity: 0;
     }
 }
