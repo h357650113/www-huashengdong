@@ -39,8 +39,14 @@ export default function Default() {
                 <Categories onChange={handleCategoriesChange} />
                 <div className="albums-wrap">
                     {albums?.length
-                        ? albums.map((item) => (
-                              <Album key={item.id} {...item} />
+                        ? albums.map((item, index) => (
+                              <Album
+                                  key={item.id}
+                                  {...item}
+                                  style={{
+                                      animationDelay: index * 0.3 + 's',
+                                  }}
+                              />
                           ))
                         : 'Not Found'}
                 </div>

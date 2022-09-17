@@ -10,13 +10,14 @@ export default function Album({
     title,
     tags,
     onMoreClick = () => {},
+    style = {},
 }) {
     const handleMoreClick = () => {
         onMoreClick(id)
     }
 
     return (
-        <div className="album">
+        <div className="album" style={{ ...style }}>
             <div className="content">
                 <div>
                     <h3>{title}</h3>

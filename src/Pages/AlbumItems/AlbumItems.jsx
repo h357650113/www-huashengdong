@@ -53,10 +53,11 @@ export default function AlbumItems() {
             />
             <div className="albums-wrap">
                 {albumItem.current.length
-                    ? albumItem.current.map((item) => (
+                    ? albumItem.current.map((item, index) => (
                           <Album
                               key={item.id}
                               {...item}
+                              style={{ animationDelay: index * 0.2 + 's' }}
                               onMoreClick={handleMoreClicK}
                           />
                       ))

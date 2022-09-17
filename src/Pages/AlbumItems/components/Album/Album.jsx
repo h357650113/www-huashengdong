@@ -8,13 +8,18 @@ export default function Album({
     type,
     open_source,
     onMoreClick = () => {},
+    style = {},
 }) {
     const handleMoreClick = () => {
         onMoreClick(open_source.match(/\d(\S+)|\d/g))
     }
 
     return (
-        <div className="album-item" onClick={handleMoreClick}>
+        <div
+            className="album-item"
+            onClick={handleMoreClick}
+            style={{ ...style }}
+        >
             <div className="type">{type}</div>
             <div className="content">
                 <div className="des">

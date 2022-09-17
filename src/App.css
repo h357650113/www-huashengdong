@@ -9,3 +9,12 @@
 a {
     text-decoration: none;
 }
+
+@keyframes showItem {
+    from {
+        opacity: 0.3;
+    }
+    to {
+        opacity: 1;
+    }
+}

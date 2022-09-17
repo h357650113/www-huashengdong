@@ -6,6 +6,8 @@
     width: 947px;
     display: flex;
 
+    animation: showItem 0.3s ease forwards;
+
     .type {
         color: #ffffff;
         background-color: var(--website-color-blue);
@@ -69,5 +71,11 @@
         .info {
             display: none;
         }
+    }
+}
+
+@supports (animation: 'showItem 0.3s ease forwards') {
+    .album-item {
+        opacity: 0;
     }
 }
