@@ -1,37 +1,33 @@
 import React from 'react'
 import dateIcon from '../../asset/icon/date-line.png'
-import arrowIcon from '../../asset/icon/arrow-down.png'
 import './index.scss'
 
-export default function Filter() {
+export default function Filter({
+    fold = true,
+    onFilterIconClick = () => {},
+    onFilterChange = () => {},
+}) {
+    const handleFilterWrapClick = (event) => {
+        event.stopPropagation()
+    }
     return (
-        <div className="filter-wrap">
+        <div
+            className={`filter-wrap ${fold ? 'filter-wrap-fold' : ''}`}
+            onClick={handleFilterWrapClick}
+        >
             <div className="filter">
                 <div className="type">
                     <div className="type-filter">
-                        <div className="icon-wrap">
+                        <div className="icon-wrap" onClick={onFilterIconClick}>
                             <img src={dateIcon} alt="" />
                         </div>
                         <span>DATE</span>
                     </div>
                 </div>
                 <div className="sort">
-                    <select>
-                        <option>
-                            <div className="opt">
-                                up <img src={arrowIcon} alt="" />
-                            </div>
-                        </option>
-                        <option>
-                            <div className="opt">
-                                down{' '}
-                                <img
-                                    src={arrowIcon}
-                                    alt=""
-                                    style={{ transform: 'skewX(180px)' }}
-                                />
-                            </div>
-                        </option>
+                    <select onChange={onFilterChange}>
+                        <option value="up">up</option>
+                        <option value="down">down </option>
                     </select>
                 </div>
             </div>

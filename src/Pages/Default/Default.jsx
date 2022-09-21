@@ -10,6 +10,7 @@ import Filter from '../../Components/Filter/Filter'
 
 export default function Default() {
     const ref = useRef()
+    const [filterFold, setFilterFold] = useState(true)
     const [albums, setAlbums] = useState(null)
     const [tags, setTags] = useState(null)
     async function fetchAlbums(search) {
@@ -32,13 +33,27 @@ export default function Default() {
     const handleCategoriesChange = (_tags) => {
         setTags(_tags)
     }
+    const handleFilterIconClick = (event) => {
+        event.stopPropagation()
+        setFilterFold(false)
+    }
+    const handleFilterFold = () => {
+        setFilterFold(true)
+    }
+    const handleFilterChange = (event) => {
+        console.log('event', event.target.value)
+    }
     return (
-        <div className="page-default" ref={ref}>
+        <div className="page-default" ref={ref} onClick={handleFilterFold}>
             <Header />
             <SearchBar hasSearch onSearchEnterDown={onSearchEnterDown} />
             <div className="content">
                 <Categories onChange={handleCategoriesChange} />
-                <Filter />
+                <Filter
+                    onFilterChange={handleFilterChange}
+                    onFilterIconClick={handleFilterIconClick}
+                    fold={filterFold}
+                />
                 <div className="albums-wrap">
                     {albums?.length
                         ? albums.map((item) => (

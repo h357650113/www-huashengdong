@@ -1,7 +1,8 @@
 .filter-wrap {
     position: fixed;
+    z-index: 9;
     bottom: 100px;
-    left: 80px;
+    left: 15px;
 
     .sort {
         select {
@@ -22,6 +23,7 @@
     }
 
     .filter {
+        cursor: pointer;
         display: flex;
         align-items: center;
         background-color: var(--website-color-orange-1);
@@ -49,6 +51,27 @@
             display: block;
             transform: translateY(-17px);
             font-size: 8px;
+        }
+    }
+}
+
+.filter-wrap-fold {
+    overflow: hidden;
+    width: 46px;
+    height: 46px;
+    padding: 0px;
+    box-shadow: 0 0 2px #eee;
+
+    .filter {
+        width: 46px;
+        height: 46px;
+        padding: 0px;
+        .icon-wrap {
+            transform: translateY(0px);
+            border: none;
+        }
+        span {
+            display: none;
         }
     }
 }

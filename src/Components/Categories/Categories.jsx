@@ -51,7 +51,7 @@ export default function Categories({ onChange = () => {} }) {
                 <h1>Categories</h1>
                 <div className="tools">
                     <span
-                        className={checkedAllTags && 'action'}
+                        className={checkedAllTags ? 'action' : ''}
                         onClick={handleAllClick}
                     >
                         ALL
