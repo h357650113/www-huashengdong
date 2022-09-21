@@ -5,6 +5,8 @@
     left: 15px;
 
     .sort {
+        transition: opacity 0.3s ease 0.2s;
+        opacity: 1;
         select {
             margin-left: 15px;
             background-color: var(--website-color-orange-1);
@@ -23,16 +25,19 @@
     }
 
     .filter {
+        transition: width 0.3s ease;
         cursor: pointer;
         display: flex;
         align-items: center;
         background-color: var(--website-color-orange-1);
+        width: 120px;
         height: 37px;
         padding: 5px 25px;
         border-radius: 51px;
         text-align: center;
 
         .icon-wrap {
+            transition: transform 0.3s ease;
             transform: translateY(-20px);
             display: flex;
             align-items: center;
@@ -56,13 +61,17 @@
 }
 
 .filter-wrap-fold {
-    overflow: hidden;
     width: 46px;
     height: 46px;
     padding: 0px;
     box-shadow: 0 0 2px #eee;
 
+    .sort {
+        opacity: 0;
+    }
+
     .filter {
+        overflow: hidden;
         width: 46px;
         height: 46px;
         padding: 0px;
