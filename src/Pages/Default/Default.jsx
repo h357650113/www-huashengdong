@@ -60,10 +60,10 @@ export default function Default() {
                         ? albums
                               .sort((target, last) =>
                                   sortDate === 'down'
-                                      ? new Date(target.cdt).getTime() -
-                                        new Date(last.cdt).getTime()
-                                      : new Date(last.cdt).getTime() -
-                                        new Date(target.cdt).getTime()
+                                      ? new Date(target.ldt).getTime() -
+                                        new Date(last.ldt).getTime()
+                                      : new Date(last.ldt).getTime() -
+                                        new Date(target.ldt).getTime()
                               )
                               .map((item) => <Album key={item.id} {...item} />)
                         : 'Not Found'}

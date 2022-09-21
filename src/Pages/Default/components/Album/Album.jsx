@@ -4,7 +4,7 @@ import './index.scss'
 
 export default function Album({
     coverImage,
-    cdt,
+    ldt,
     summary,
     id,
     title,
@@ -29,7 +29,7 @@ export default function Album({
                 />
             </div>
             <div className="ctrl">
-                <div className="date">DATE: {cdt}</div>
+                <div className="date">LDT: {ldt}</div>
                 <div className="more" onClick={handleMoreClick}>
                     <Link to={`/item/${id}`}>MORE</Link>
                 </div>
