@@ -6,6 +6,7 @@ import Footer from '../../Components/Footer/Footer'
 import Categories from '../../Components/Categories/Categories'
 import './index.scss'
 import { getAlbums } from '../../api/album'
+import Filter from '../../Components/Filter/Filter'
 
 export default function Default() {
     const ref = useRef()
@@ -37,6 +38,7 @@ export default function Default() {
             <SearchBar hasSearch onSearchEnterDown={onSearchEnterDown} />
             <div className="content">
                 <Categories onChange={handleCategoriesChange} />
+                <Filter />
                 <div className="albums-wrap">
                     {albums?.length
                         ? albums.map((item) => (
