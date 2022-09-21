@@ -30,7 +30,7 @@
         display: flex;
         align-items: center;
         background-color: var(--website-color-orange-1);
-        width: 120px;
+        width: 155px;
         height: 37px;
         padding: 5px 25px;
         border-radius: 51px;
@@ -53,6 +53,8 @@
             border: solid 5px white;
         }
         span {
+            color: white;
+            text-shadow: #eee;
             display: block;
             transform: translateY(-17px);
             font-size: 8px;

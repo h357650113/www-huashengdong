@@ -10,6 +10,7 @@ import Filter from '../../Components/Filter/Filter'
 
 export default function Default() {
     const ref = useRef()
+    const [sortDate, setSortDate] = useState('up')
     const [filterFold, setFilterFold] = useState(true)
     const [albums, setAlbums] = useState(null)
     const [tags, setTags] = useState(null)

@@ -26,8 +26,8 @@ export default function Filter({
                 </div>
                 <div className="sort">
                     <select onChange={onFilterChange}>
-                        <option value="up">up</option>
-                        <option value="down">down </option>
+                        <option value="up">recently</option>
+                        <option value="down">previously </option>
                     </select>
                 </div>
             </div>
