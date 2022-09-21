@@ -42,7 +42,7 @@ export default function Default() {
         setFilterFold(true)
     }
     const handleFilterChange = (event) => {
-        console.log('event', event.target.value)
+        setSortDate(event.target.value)
     }
     return (
         <div className="page-default" ref={ref} onClick={handleFilterFold}>
@@ -57,9 +57,15 @@ export default function Default() {
                 />
                 <div className="albums-wrap">
                     {albums?.length
-                        ? albums.map((item) => (
-                              <Album key={item.id} {...item} />
-                          ))
+                        ? albums
+                              .sort((target, last) =>
+                                  sortDate === 'down'
+                                      ? new Date(target.cdt).getTime() -
+                                        new Date(last.cdt).getTime()
+                                      : new Date(last.cdt).getTime() -
+                                        new Date(target.cdt).getTime()
+                              )
+                              .map((item) => <Album key={item.id} {...item} />)
                         : 'Not Found'}
                 </div>
                 <div className="tips" />
