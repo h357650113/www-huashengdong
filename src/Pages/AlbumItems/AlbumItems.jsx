@@ -5,7 +5,7 @@ import Footer from '../../Components/Footer/Footer'
 import Album from './components/Album/Album'
 import './index.scss'
 import { getAlbumItems } from '../../api/album'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 export default function AlbumItems() {
     const ref = useRef()
@@ -25,10 +25,6 @@ export default function AlbumItems() {
     useEffect(() => {
         fetchAlbums(id)
     }, [id])
-    const navigate = useNavigate()
-    const handleMoreClicK = (id) => {
-        navigate(`/detail/${id}`)
-    }
     const handleSearchEnterDown = (value) => {
         value &&
             setAlbumItem((pre) => {
@@ -58,7 +54,6 @@ export default function AlbumItems() {
                               key={item.id}
                               {...item}
                               style={{ animationDelay: index * 0.2 + 's' }}
-                              onMoreClick={handleMoreClicK}
                           />
                       ))
                     : 'Not Found'}
