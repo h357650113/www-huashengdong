@@ -7,14 +7,14 @@ import { useParams } from 'react-router-dom'
 import { getBlog } from '../../api/album'
 
 export default function Detail() {
-    const { id } = useParams()
+    const { id, title } = useParams()
     const [blog, setBlog] = useState('')
     const ref = useRef()
 
     async function fetchBlog(blogIid) {
         const res = await getBlog({ id: blogIid })
         setBlog(res.data)
-        document.title = res.data.title
+        document.title = title
         ref?.current?.scrollIntoView({ behavior: 'smooth' })
     }
     useEffect(() => {

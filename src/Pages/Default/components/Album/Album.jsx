@@ -31,7 +31,7 @@ export default function Album({
             <div className="ctrl">
                 <div className="date">LDT: {ldt}</div>
                 <div className="more" onClick={handleMoreClick}>
-                    <Link to={`/item/${id}`}>MORE</Link>
+                    <Link to={`/item/${id}/${title}`}>MORE</Link>
                 </div>
             </div>
 

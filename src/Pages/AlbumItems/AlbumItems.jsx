@@ -9,7 +9,7 @@ import { useParams } from 'react-router-dom'
 
 export default function AlbumItems() {
     const ref = useRef()
-    const { id } = useParams()
+    const { id, title } = useParams()
     const [albumItem, setAlbumItem] = useState({ store: [], current: [] })
     async function fetchAlbums(id) {
         const response = await getAlbumItems({ id })
@@ -20,7 +20,7 @@ export default function AlbumItems() {
             })
             ref?.current?.scrollIntoView({ behavior: 'smooth' })
         }
-        document.title = 'ALBUM'
+        document.title = title
     }
     useEffect(() => {
         fetchAlbums(id)

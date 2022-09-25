@@ -13,10 +13,10 @@ function App() {
                     <Route index element={<PageDefault />} />
                 </Route>
                 <Route path="/item">
-                    <Route path=":id" element={<PageAlbumItems />} />
+                    <Route path=":id/:title" element={<PageAlbumItems />} />
                 </Route>
                 <Route path="/detail">
-                    <Route path=":id" element={<PageDetail />} />
+                    <Route path=":id/:title" element={<PageDetail />} />
                 </Route>
                 <Route path="/chart" element={<PageChart />} />
             </Routes>

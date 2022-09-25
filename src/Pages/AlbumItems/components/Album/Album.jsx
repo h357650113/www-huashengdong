@@ -12,7 +12,7 @@ export default function Album({
     style = {},
 }) {
     return (
-        <Link to={`/detail/${open_source.match(/\d(\S+)|\d/g)}`}>
+        <Link to={`/detail/${open_source.match(/\d(\S+)|\d/g)}/${title}`}>
             <div className="album-item" style={{ ...style }}>
                 <div className="type">{type}</div>
                 <div className="content">
