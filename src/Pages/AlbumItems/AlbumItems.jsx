@@ -8,7 +8,7 @@ import { getAlbumItems } from '../../api/album'
 import { useParams } from 'react-router-dom'
 
 export default function AlbumItems() {
-    const ref = useRef()
+    const refPageAlbumItems = useRef()
     const { id, title } = useParams()
     const [albumItem, setAlbumItem] = useState({ store: [], current: [] })
     async function fetchAlbums(id) {
@@ -18,7 +18,7 @@ export default function AlbumItems() {
                 store: response.data,
                 current: response.data,
             })
-            ref?.current?.scrollIntoView({ behavior: 'smooth' })
+            refPageAlbumItems?.current?.scrollIntoView({ behavior: 'smooth' })
         }
         document.title = title
     }
@@ -40,7 +40,7 @@ export default function AlbumItems() {
         !value && fetchAlbums()
     }
     return (
-        <div className="page-album-items" ref={ref}>
+        <div className="page-album-items" ref={refPageAlbumItems}>
             <Header />
             <SearchBar
                 hasBack

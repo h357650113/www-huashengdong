@@ -9,7 +9,7 @@ import { getAlbums } from '../../api/album'
 import Filter from '../../Components/Filter/Filter'
 
 export default function Default() {
-    const ref = useRef()
+    const refPageDefault = useRef()
     const [sortDate, setSortDate] = useState('up')
     const [filterFold, setFilterFold] = useState(true)
     const [albums, setAlbums] = useState(null)
@@ -21,7 +21,7 @@ export default function Default() {
         })
         if (response?.data) {
             setAlbums(response.data)
-            ref?.current?.scrollIntoView({ behavior: 'smooth' })
+            refPageDefault?.current?.scrollIntoView({ behavior: 'smooth' })
         }
     }
     useEffect(() => {
@@ -45,7 +45,11 @@ export default function Default() {
         setSortDate(event.target.value)
     }
     return (
-        <div className="page-default" ref={ref} onClick={handleFilterFold}>
+        <div
+            className="page-default"
+            ref={refPageDefault}
+            onClick={handleFilterFold}
+        >
             <Header />
             <SearchBar hasSearch onSearchEnterDown={onSearchEnterDown} />
             <div className="content">
