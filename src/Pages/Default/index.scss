@@ -5,6 +5,7 @@
         .albums-wrap {
             display: grid;
             justify-content: center;
+            gap: 20px;
         }
     }
 }
@@ -14,6 +15,7 @@
         .content {
             display: flex;
             justify-content: space-between;
+
             .albums-wrap {
                 min-width: 917px;
             }
