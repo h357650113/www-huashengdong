@@ -9,19 +9,19 @@ import { getBlog } from '../../api/album'
 export default function Detail() {
     const { id, title } = useParams()
     const [blog, setBlog] = useState('')
-    const ref = useRef()
+    const refPageBlog = useRef()
 
     async function fetchBlog(blogIid) {
         const res = await getBlog({ id: blogIid })
         setBlog(res.data)
         document.title = title
-        ref?.current?.scrollIntoView({ behavior: 'smooth' })
+        refPageBlog?.current?.scrollIntoView({ behavior: 'smooth' })
     }
     useEffect(() => {
         fetchBlog(id)
     }, [id])
     return (
-        <div className="page-blog" ref={ref}>
+        <div className="page-blog" ref={refPageBlog}>
             <Header />
             <SearchBar hasBack />
             <div className="title">{blog.title}</div>
