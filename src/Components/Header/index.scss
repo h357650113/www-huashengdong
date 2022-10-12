@@ -54,6 +54,34 @@
             }
         }
     }
+
+    .card {
+        display: flex;
+        position: fixed;
+        justify-content: center;
+        background-color: #2d9cdb;
+        padding: 21px 41px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        font-size: 22px;
+
+        & > img {
+            width: 300px;
+            height: 300px;
+        }
+        .info {
+            margin-top: 80px;
+            align-items: center;
+            margin-left: 50px;
+            width: 300px;
+            color: #ffffff;
+            div {
+                margin-bottom: 20px;
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 740px) {
