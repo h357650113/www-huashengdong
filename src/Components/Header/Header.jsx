@@ -9,12 +9,30 @@ import copySrc from '../../asset/icon/copy.png'
 import weixinSrc from '../../asset/icon/weixin.png'
 
 const Card = ({ visible = true }) => {
+    const handleEmailCopy = (e) => {
+        e.stopPropagation()
+        navigator.clipboard.writeText('357650113@qq.com')
+    }
+    const handleCardClick = (e) => {
+        e.stopPropagation()
+    }
     return (
-        <div className="card" hidden={visible}>
+        <div
+            className="card"
+            style={{
+                display: visible
+                    ? 'none'
+                    : window.innerWidth < 740
+                    ? 'grid'
+                    : 'flex',
+            }}
+            onClick={handleCardClick}
+        >
             <img src={wxQR} alt="" />
             <div className="info">
-                <div>
-                    357650113@qq.com <img src={copySrc} alt="" />
+                <div onClick={handleEmailCopy}>
+                    357650113@qq.com{' '}
+                    <img style={{ cursor: 'pointer' }} src={copySrc} alt="" />
                 </div>
                 <div>
                     <img src={weixinSrc} alt="" /> huashengdong
