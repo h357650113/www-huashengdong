@@ -60,28 +60,73 @@
     .card {
         position: fixed;
         justify-content: center;
-        background-color: #2d9cdb;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         border-radius: 5px;
         font-size: 22px;
         box-shadow: 0 0 15px rgb(98, 98, 98);
-        height: 300px;
         overflow: hidden;
 
-        & > img {
-            height: 100%;
-        }
-        .info {
-            margin-top: 100px;
-            align-items: center;
-            margin-left: 50px;
-            width: 300px;
-            color: #ffffff;
-            div {
-                margin-bottom: 20px;
+        .wrap {
+            background-color: #2d9cdb;
+            border-radius: 5px;
+            position: relative;
+            height: 300px;
+            margin: 3px;
+            z-index: 9;
+            & > img {
+                height: 100%;
             }
+            .info {
+                margin-top: 100px;
+                align-items: center;
+                margin-left: 50px;
+                width: 300px;
+                color: #ffffff;
+                div {
+                    margin-bottom: 20px;
+                    img {
+                        transform: translateY(5px);
+                        width: 24px;
+                    }
+                }
+            }
+        }
+
+        .light {
+            position: absolute;
+            inset: 0;
+        }
+        .light::before {
+            content: ' ';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 120px;
+            background: linear-gradient(
+                transparent,
+                rgb(255, 255, 200),
+                rgb(255, 255, 9),
+                rgb(255, 255, 199),
+                transparent
+            );
+            animation: animate1 5s ease infinite;
+        }
+        @keyframes animate1 {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+        .light::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
         }
     }
 }
@@ -117,26 +162,72 @@
 
     .card {
         position: fixed;
-        background-color: #2d9cdb;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        box-shadow: 0 0 2px #eee;
+        box-shadow: 0 0 2px rgb(168, 168, 168);
         border-radius: 5px;
+        overflow: hidden;
 
-        & > img {
-            width: 100%;
-        }
-        .info {
-            font-size: 22px;
-            margin-top: 30px;
-            align-items: center;
-            margin-left: 50px;
+        .wrap {
+            border-radius: 5px;
+            background-color: #2d9cdb;
+            position: relative;
             width: 300px;
-            color: #ffffff;
-            div {
-                margin-bottom: 20px;
+            margin: 3px;
+            z-index: 9;
+
+            & > img {
+                width: 100%;
             }
+            .info {
+                margin-top: 30px;
+                text-align: center;
+                width: 300px;
+                color: #ffffff;
+                div {
+                    margin-bottom: 20px;
+                    img {
+                        transform: translateY(5px);
+                        width: 24px;
+                    }
+                }
+            }
+        }
+
+        .light {
+            position: absolute;
+            inset: 0;
+        }
+        .light::before {
+            content: ' ';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: 120px;
+            background: linear-gradient(
+                transparent,
+                rgb(255, 255, 200),
+                rgb(255, 255, 46),
+                rgb(255, 255, 199),
+                transparent
+            );
+            animation: animate1 5s ease infinite;
+        }
+        @keyframes animate1 {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+        }
+        .light::after {
+            content: '';
+            position: absolute;
+            inset: 3px;
         }
     }
 }

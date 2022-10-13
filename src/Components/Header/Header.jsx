@@ -20,22 +20,28 @@ const Card = ({ visible = true }) => {
         <div
             className="card"
             style={{
-                display: visible
-                    ? 'none'
-                    : window.innerWidth < 740
-                    ? 'grid'
-                    : 'flex',
+                display: visible ? 'none' : 'block',
             }}
             onClick={handleCardClick}
         >
-            <img src={wxQR} alt="" />
-            <div className="info">
-                <div onClick={handleEmailCopy}>
-                    357650113@qq.com{' '}
-                    <img style={{ cursor: 'pointer' }} src={copySrc} alt="" />
-                </div>
-                <div>
-                    <img src={weixinSrc} alt="" /> huashengdong
+            <div className="light" />
+            <div
+                className="wrap"
+                style={{ display: window.innerWidth < 740 ? 'grid' : 'flex' }}
+            >
+                <img src={wxQR} alt="" />
+                <div className="info">
+                    <div onClick={handleEmailCopy}>
+                        357650113@qq.com{' '}
+                        <img
+                            style={{ cursor: 'pointer' }}
+                            src={copySrc}
+                            alt=""
+                        />
+                    </div>
+                    <div>
+                        <img src={weixinSrc} alt="" /> huashengdong
+                    </div>
                 </div>
             </div>
         </div>
