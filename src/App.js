@@ -4,6 +4,7 @@ import PageDefault from './Pages/Default/Default'
 import PageAlbumItems from './Pages/AlbumItems/AlbumItems'
 import PageDetail from './Pages/Detail/Detail'
 import PageChart from './Pages/Chart/Chart'
+import PageNodes from './Pages/Nodes/Nodes'
 
 function App() {
     return (
@@ -17,6 +18,9 @@ function App() {
                 </Route>
                 <Route path="/detail">
                     <Route path=":id/:title" element={<PageDetail />} />
+                </Route>
+                <Route path="/nodes">
+                    <Route index element={<PageNodes />} />
                 </Route>
                 <Route path="/chart" element={<PageChart />} />
             </Routes>
