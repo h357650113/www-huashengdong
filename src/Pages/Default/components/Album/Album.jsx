@@ -23,6 +23,7 @@ export default function Album({
                     <h3>{title}</h3>
                     <p>{summary}</p>
                 </div>
+
                 <div
                     className="cover-image"
                     style={{ backgroundImage: `url(${coverImage})` }}

@@ -1,5 +1,11 @@
-const sum = (a, b) => a + b
+import React from 'react'
+import renderer from 'react-test-renderer'
+import App from '../App'
 
-it('test sum', () => {
-    expect(sum(2, 3)).toEqual(5)
+describe('AlbumItems', () => {
+    test('renders correctly', () => {
+        const component = renderer.create(<App />)
+        const tree = component.toJSON()
+        expect(tree).toMatchSnapshot()
+    })
 })

@@ -1,17 +1,26 @@
+import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import PageDefault from './Pages/Default/Default'
 import PageAlbumItems from './Pages/AlbumItems/AlbumItems'
 import PageDetail from './Pages/Detail/Detail'
 import PageChart from './Pages/Chart/Chart'
 import PageNodes from './Pages/Nodes/Nodes'
+
+const PageDefault = lazy(() => import('./Pages/Default/Default'))
 
 function App() {
     return (
         <BrowserRouter>
             <Routes>
                 <Route path="/">
-                    <Route index element={<PageDefault />} />
+                    <Route
+                        index
+                        element={
+                            <Suspense fallback={'loading...'}>
+                                <PageDefault />
+                            </Suspense>
+                        }
+                    />
                 </Route>
                 <Route path="/item">
                     <Route path=":id/:title" element={<PageAlbumItems />} />
