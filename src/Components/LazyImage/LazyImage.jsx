@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 
-export default function LazyImage({ id, src }) {
+export default function LazyImage({ id, src, className = '' }) {
     const [inView, setInView] = useState(false)
     const ref = useRef()
 
@@ -24,12 +24,12 @@ export default function LazyImage({ id, src }) {
     return inView ? (
         <div
             ref={ref}
-            className="cover-image"
+            className={className}
             style={{ backgroundImage: `url(${src})` }}
             key={id}
             id={id}
         ></div>
     ) : (
-        <div ref={ref} className="cover-image"></div>
+        <div ref={ref} className={className}></div>
     )
 }

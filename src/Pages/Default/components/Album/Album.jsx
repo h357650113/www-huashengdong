@@ -25,7 +25,7 @@ export default function Album({
                     <p>{summary}</p>
                 </div>
 
-                <LazyImage id={id} src={coverImage} />
+                <LazyImage id={id} src={coverImage} className="cover-image" />
             </div>
             <div className="ctrl">
                 <div className="date">LDT: {ldt}</div>
