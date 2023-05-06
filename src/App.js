@@ -16,7 +16,7 @@ function App() {
                     <Route
                         index
                         element={
-                            <Suspense fallback={'loading...'}>
+                            <Suspense fallback={'lazy loading...'}>
                                 <PageDefault />
                             </Suspense>
                         }
@@ -26,7 +26,7 @@ function App() {
                     <Route
                         path=":id/:title"
                         element={
-                            <Suspense fallback={'loading...'}>
+                            <Suspense fallback={'lazy loading...'}>
                                 <PageAlbumItems />
                             </Suspense>
                         }
@@ -36,7 +36,7 @@ function App() {
                     <Route
                         path=":id/:title"
                         element={
-                            <Suspense fallback={'loading...'}>
+                            <Suspense fallback={'lazy loading...'}>
                                 <PageDetail />
                             </Suspense>
                         }
@@ -46,7 +46,7 @@ function App() {
                     <Route
                         index
                         element={
-                            <Suspense fallback={'loading...'}>
+                            <Suspense fallback={'lazy loading...'}>
                                 <PageNodes />
                             </Suspense>
                         }
@@ -55,7 +55,7 @@ function App() {
                 <Route
                     path="/chart"
                     element={
-                        <Suspense fallback={'loading...'}>
+                        <Suspense fallback={'lazy loading...'}>
                             <PageChart />
                         </Suspense>
                     }

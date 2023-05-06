@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import LazyImage from '../../../../Components/LazyImage/LazyImage'
 import './index.scss'
 
 export default function Album({
@@ -24,10 +25,7 @@ export default function Album({
                     <p>{summary}</p>
                 </div>
 
-                <div
-                    className="cover-image"
-                    style={{ backgroundImage: `url(${coverImage})` }}
-                />
+                <LazyImage id={id} src={coverImage} />
             </div>
             <div className="ctrl">
                 <div className="date">LDT: {ldt}</div>
