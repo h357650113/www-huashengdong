@@ -1,12 +1,12 @@
 import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import PageAlbumItems from './Pages/AlbumItems/AlbumItems'
-import PageDetail from './Pages/Detail/Detail'
-import PageChart from './Pages/Chart/Chart'
-import PageNodes from './Pages/Nodes/Nodes'
 
 const PageDefault = lazy(() => import('./Pages/Default/Default'))
+const PageDetail = lazy(() => import('./Pages/Detail/Detail'))
+const PageAlbumItems = lazy(() => import('./Pages/AlbumItems/AlbumItems'))
+const PageChart = lazy(() => import('./Pages/Chart/Chart'))
+const PageNodes = lazy(() => import('./Pages/Nodes/Nodes'))
 
 function App() {
     return (
@@ -23,15 +23,43 @@ function App() {
                     />
                 </Route>
                 <Route path="/item">
-                    <Route path=":id/:title" element={<PageAlbumItems />} />
+                    <Route
+                        path=":id/:title"
+                        element={
+                            <Suspense fallback={'loading...'}>
+                                <PageAlbumItems />
+                            </Suspense>
+                        }
+                    />
                 </Route>
                 <Route path="/detail">
-                    <Route path=":id/:title" element={<PageDetail />} />
+                    <Route
+                        path=":id/:title"
+                        element={
+                            <Suspense fallback={'loading...'}>
+                                <PageDetail />
+                            </Suspense>
+                        }
+                    />
                 </Route>
                 <Route path="/nodes">
-                    <Route index element={<PageNodes />} />
+                    <Route
+                        index
+                        element={
+                            <Suspense fallback={'loading...'}>
+                                <PageNodes />
+                            </Suspense>
+                        }
+                    />
                 </Route>
-                <Route path="/chart" element={<PageChart />} />
+                <Route
+                    path="/chart"
+                    element={
+                        <Suspense fallback={'loading...'}>
+                            <PageChart />
+                        </Suspense>
+                    }
+                />
             </Routes>
         </BrowserRouter>
     )
