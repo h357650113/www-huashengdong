@@ -35,9 +35,7 @@ export const getAlbumItems = async ({ id }) => {
 }
 export const getBlog = async ({ id }) => {
     try {
-        const response = await api.get(
-            `https://proto.huashengdong.com/api/open/blog?blogId=${id}`
-        )
+        const response = await api.get(`/blog?blogId=${id}`)
         return response
     } catch (error) {
         console.log('error', error)
