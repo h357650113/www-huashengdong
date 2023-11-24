@@ -22,9 +22,11 @@ export default function AlbumItems() {
         }
         document.title = title
     }
+
     useEffect(() => {
         fetchAlbums(id)
     }, [id])
+
     const handleSearchEnterDown = (value) => {
         value &&
             setAlbumItem((pre) => {
@@ -39,6 +41,7 @@ export default function AlbumItems() {
 
         !value && fetchAlbums()
     }
+
     return (
         <div className="page-album-items" ref={refPageAlbumItems}>
             <Header />
@@ -53,7 +56,7 @@ export default function AlbumItems() {
                           <Album
                               key={item.id}
                               {...item}
-                              style={{ animationDelay: index * 0.2 + 's' }}
+                              style={{ animationDelay: index * 0.1 + 's' }}
                           />
                       ))
                     : 'Not Found'}

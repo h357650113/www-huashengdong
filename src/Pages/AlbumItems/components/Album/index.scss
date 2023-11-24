@@ -4,6 +4,7 @@
     box-shadow: 0px 0px 4px #bdbdbd;
     width: 947px;
     display: flex;
+    opacity: 0;
 
     animation: showItem 0.3s ease forwards;
 
@@ -72,8 +73,8 @@
     }
 }
 
-@supports (animation: 'showItem 0.3s ease forwards') {
+@supports not (animation: 'showItem 0.1s ease forwards') {
     .album-item {
-        opacity: 0;
+        opacity: 1;
     }
 }
