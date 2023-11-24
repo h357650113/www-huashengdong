@@ -3,6 +3,7 @@ import renderer from 'react-test-renderer'
 import App from '../App'
 import AlbumItems from '../AlbumItems'
 
+// test
 describe('AlbumItems', () => {
     test('renders correctly', () => {
         const component = renderer.create(<App />)
